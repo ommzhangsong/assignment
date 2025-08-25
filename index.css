@@ -1,0 +1,28 @@
+.card{
+display: flex;
+background-color: rgb(18,19,20);
+justify-content:center;
+height: 580px;
+width: 450px;
+border-radius: 13px;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+.select-token{
+display: flex;
+justify-content: center;
+position: absolute;
+top: 10%;
+width: 80%;
+margin-left: 10%;
+}
+.custom-select-token{
+color: aliceblue;
+border-radius: 30px;
+width: 100%;
+background-color: rgb(18,19,20);
+padding: 15px 15px;
+
+}
