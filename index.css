@@ -50,24 +50,47 @@ body {
 
 .nav-link {
     color: rgb(156, 161, 175) !important;
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
-.nav-link.active {
+
+
+li .active {
     background-color: rgb(18, 19, 20) !important;
-    color: rgb(139,153,255) !important;
-    margin-left: 20px;
+    color: rgb(139, 153, 255) !important;
     font-size: 20px;
-}
-.active svg{
-width:22px ;
-height:22px;
-fill:rgb(139,153,255) !important;
+    padding: 0px 0 0 10px!important;
+    height: 100%;
 }
 
-.col-bar .nav-link svg {
-    width: 18px;
-    height: auto;
-    margin-right: 5px;
+.nav-arrow {
+    display: none;
+    vertical-align: middle;
+    margin-left: 12px;
+    fill: rgb(139, 153, 255) !important;
+    height: 20px!important;
+    width: 20px!important;
+}
+
+.active .nav-arrow {
+    display: inline;
+    border-right: 1px solid rgb(139, 153, 255);
+    margin-right: 0px;
+}
+
+.nav-item {
+    margin: 10px 0px !important;
+    height: 40px;
+    width:100%;
+}
+
+
+.active svg {
+    width: 40px !important;
+    fill: rgb(139, 153, 255) !important;
+    margin-right: 10px;
 }
 
 .col-bar .nav-link svg {
@@ -108,6 +131,7 @@ fill:rgb(139,153,255) !important;
 .search-bar {
     outline: none;
 }
+
 .search-bar:focus {
     border-color: rgb(58, 146, 246) !important;
 }
