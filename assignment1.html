@@ -120,34 +120,49 @@
             <!-- 右边内容栏 -->
             <div class="col-content h-100" style="background-color:rgb(0, 0, 0);">
                 <!-- 内容栏上面组件 -->
-                <div class="header d-flex" style="height: 100px;padding: 30px;">
-                    <h3 style="color: white;">Swap</h3>
-                    <!-- 搜索框 -->
-                    <div class="search-wrapper" style="margin-left: 500px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-search"
-                            viewBox="0 0 16 16">
+                <div class="header d-flex  row" style="height: 100px;padding: 30px;">
+
+                    <div class="col-md-6">
+                        <div style="color: white;font-size: 28px;">Swap</div>
+
+                    </div>
+                    <div class="col-md-3">
+                        <div class="search-wrapper d-flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
+                                class="bi bi-search" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                            </svg>
+                            <input type="text" class="form-control search-bar" placeholder="Search for tokens...">
+                        </div>
+
+                    </div>
+                    <div class="col-md-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-bell" viewBox="0 0 12 12">
                             <path
-                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                        </svg>
-                        <input type="search" placeholder="Search for a token..." class="search-bar">
+                                d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6" />
+                        </svg> <button class="btn" style="background-color: aliceblue;border-radius: 16px;">sign
+                            up</button>
                     </div>
-                </div>
-                <!-- 主要内容框：进行SWAP -->
-                <div class="card container-card">
-                    <div class="mb-3 select-token">
-                        <label for="account"></label>
-                        <select class="custom-select-token" id="account">
-                            <option value="ETH">Ethereum</option>
-                            <option value="BTC">Bitcoin</option>
-                            <option value="Tather">Tather</option>
-                            <option value="BNB">BNB</option>
-                            <option value="USD">USD</option>
-                        </select>
-                    </div>
-                    <h5 style="color: aliceblue; margin-left: 50px;margin-bottom: 250px;font-size: 20px;">Swap from</h1>
                 </div>
             </div>
+            <!-- 主要内容框：进行SWAP -->
+            <div class="card container-card">
+                <div class="mb-3 select-token">
+                    <label for="account"></label>
+                    <select class="custom-select-token" id="account">
+                        <option value="network1">Network1</option>
+                        <option value="network2">Network2</option>
+                        <option value="network3">Network3</option>
+                        <option value="network4">Network4</option>
+                        <option value="network5">network5</option>
+                    </select>
+                </div>
+                <h5 style="color: aliceblue; margin-left: 50px;margin-bottom: 250px;font-size: 20px;">Swap from</h1>
+            </div>
         </div>
+    </div>
     </div>
 </body>
 
