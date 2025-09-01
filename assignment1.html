@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="index.css">
     <script src="js/bootstrap.bundle.min.js"></script>
-
+    <script src="index.js"></script>
 </head>
 
 <body>
@@ -180,33 +180,24 @@
                             <span style="color: aliceblue;font-size: 17px;font-weight: bold;">Swap from</span>
                         </div>
                         <!--按钮1  选择token输入数量-->
-                        <div class="d-flex ">
-                            <button type="button" class="swap-from-token">
-
-                            </button>
-                            <input type="text" placeholder="0" style="color:white;">
-                        </div>
-                        <!-- 按钮2 互换token-->
-                        <a role="button" href="#">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
-                                class="bi bi-arrow-down-up" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5m-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5" />
-                            </svg>
-                        </a>
-                        <!-- swap tp -->
-                        <div class="d-flex justify-content-start mb-3" style="width: 100%;">
-                            <span style="color: aliceblue;font-size: 17px;font-weight: bold;">Swap to</span>
-                        </div>
-                        <!-- 按钮3 选择token -->
-                        <div class="mb-3 select-to-token">
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
+                         <div class="mb-3 select-from-token row" style="padding: 0%;">
+                            <div class="dropdown dropdown1 col-md-6" style="position: relative;padding: 0%;">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     <img src="images/eth.svg">
                                     ETH
                                 </button>
-                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                                <div class="search-wrapper d-flex d-none" id="searchWrapper1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
+                                        class="bi bi-search" viewBox="0 0 16 16">
+                                        <path
+                                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                    </svg>
+                                    <input type="text" class="form-control search-bar search-bar-1"
+                                        placeholder="Search name or paster adress">
+                                </div>
+                                <ul class="dropdown-menu dropdown-menu-dark swap-from-ul"
+                                    aria-labelledby="dropdownMenuButton1">
                                     <li><a class="dropdown-item active" href="#"><img src="images/eth.svg" width="20px"
                                                 height="20px">
                                             ETH</a></li>
@@ -224,8 +215,68 @@
                                                 height="20px">UNI</a></li>
                                     <li><a class="dropdown-item" href="#"><img src="images/shib.svg" width="20px"
                                                 height="20px">SHIB</a></li>
-                                    <li><a class="dropdown-item" href="#"><img src="images/pol.svg" width="20px"
-                                                height="20px">POL</a></li>
+                                    <li><a class="dropdown-item" href="#"><img src="images/pol.svg" width="40px"
+                                                height="40px">POL</a></li>
+                                    <li><a class="dropdown-item" href="#"><img src="images/wbtc.svg" width="20px"
+                                                height="20px">WBTC</a></li>
+
+
+                                </ul>
+                            </div>
+                            <input  class= "col-md-6" type="text" placeholder="0" style="color:rgb(255, 255, 255);background-color: rgb(18, 19, 20);border: 1px solid rgb(39, 39, 39);border-radius: 0 8px 8px 0 ; ">
+                        </div>
+                            
+                        
+                        <!-- 按钮2 互换token-->
+                        <a role="button" href="#" class="swap-button d-flex w-100 justify-content-end"  id="swapButton">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
+                                class="bi bi-arrow-down-up" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5m-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5" />
+                            </svg>
+                        </a>
+                        <!-- swap tp -->
+                        <div class="d-flex justify-content-start mb-3" style="width: 100%;">
+                            <span style="color: aliceblue;font-size: 17px;font-weight: bold;">Swap to</span>
+                        </div>
+                        <!-- 按钮3 选择token -->
+                        <div class="mb-3 select-to-token">
+                            <div class="dropdown dropdown3" style="position: relative;">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton3"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="images/eth.svg">
+                                    ETH
+                                </button>
+                                <div class="search-wrapper d-flex d-none" id="searchWrapper3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
+                                        class="bi bi-search" viewBox="0 0 16 16">
+                                        <path
+                                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                    </svg>
+                                    <input type="text" class="form-control search-bar search-bar-3"
+                                        placeholder="Search name or paster adress">
+                                </div>
+                                <ul class="dropdown-menu dropdown-menu-dark swap-to-ul"
+                                    aria-labelledby="dropdownMenuButton3">
+                                    <li><a class="dropdown-item active" href="#"><img src="images/eth.svg" width="20px"
+                                                height="20px">
+                                            ETH</a></li>
+                                    <li><a class="dropdown-item" href="#"><img src="images/bonk.svg" width="20px"
+                                                height="20px">BONK</a></li>
+                                    <li><a class="dropdown-item" href="#"><img src="images/cro.svg" width="20px"
+                                                height="20px">CRO</a></li>
+                                    <li><a class="dropdown-item" href="#"><img src="images/ena.svg" width="20px"
+                                                height="20px">ENA</a></li>
+                                    <li><a class="dropdown-item" href="#"><img src="images/usde.svg" width="20px"
+                                                height="20px">USDE</a></li>
+                                    <li><a class="dropdown-item" href="#"><img src="images/usdt.svg" width="20px"
+                                                height="20px">USDT</a></li>
+                                    <li><a class="dropdown-item" href="#"><img src="images/uniswap.svg" width="20px"
+                                                height="20px">UNI</a></li>
+                                    <li><a class="dropdown-item" href="#"><img src="images/shib.svg" width="20px"
+                                                height="20px">SHIB</a></li>
+                                    <li><a class="dropdown-item" href="#"><img src="images/pol.svg" width="40px"
+                                                height="40px">POL</a></li>
                                     <li><a class="dropdown-item" href="#"><img src="images/wbtc.svg" width="20px"
                                                 height="20px">WBTC</a></li>
 
@@ -235,20 +286,30 @@
                         </div>
                         <!-- 按钮4 下拉按钮选择 -->
                         <div class="button-advancedopinons">
-                            <div class="dropdown" style="position: relative;">
-                                <a role="button" id="bellDropdown" data-bs-toggle="dropdown" href="#"
-                                    aria-expanded="false">
-                                    <span style="color: white;">Advanced Options</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-chevron-down" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd"
-                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
-                                    </svg>
-                                </a>
+
+                            <button type="button" data-bs-toggle="collapse" data-bs-target="#advancedOptions"
+                                style="width: 100%; background-color: transparent; border: none; padding: 10px; border-radius: 8px; display: flex; justify-content: center; align-items: center;">
+                                <span style="color: white;">Advanced Options</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
+                                    class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                                </svg>
+                            </button>
+
+                            <div class=" collapse" id="advancedOptions"
+                                style="background-color: rgb(18, 19, 20); color: white;">
+                                <div class="d-flex align-items-center justify-content-evenly w-100">
+                                    <div>Slippage <br> Tolerance</div>
+                                    <button type="button" class="btn btn-outline-light mx-3">2%</button>
+                                    <button type="button" class="btn btn-outline-light mx-3">3%</button>
+                                    <button type="button" class="btn btn-outline-light mx-3">custom</button>
+                                </div>
                             </div>
+
                         </div>
                         <!-- button5 getquotees -->
-                        <button type="button " class="button-getquotes">Get Quotes</button>
+                        <button type="button " class="button-getquotes w-100" style="border-radius: 8px; height: 40px; background-color: rgb(105, 105, 105);">Get Quotes</button>
                         <a href="/service">Terms of service</a>
                     </div>
                 </div>
