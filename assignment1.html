@@ -180,27 +180,26 @@
                             <span style="color: aliceblue;font-size: 17px;font-weight: bold;">Swap from</span>
                         </div>
                         <!--按钮1  选择token输入数量-->
-                         <div class="mb-3 select-from-token row" style="padding: 0%;">
-                            <div class="dropdown dropdown1 col-md-6" style="position: relative;padding: 0%;">
+                        <div class="mb-3 select-from-token d-flex  " style="padding: 0%;">
+                            <div class="dropdown dropdown1 " style="padding:0%">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     <img src="images/eth.svg">
                                     ETH
                                 </button>
-                                <div class="search-wrapper d-flex d-none" id="searchWrapper1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
+                                <div class="search-wrapper d-flex d-none w-100" id="searchWrapper1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white"
                                         class="bi bi-search" viewBox="0 0 16 16">
                                         <path
                                             d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                                     </svg>
-                                    <input type="text" class="form-control search-bar search-bar-1"
+                                    <input type="text" class="form-control search-bar search-bar-1 h-100 w-100"
                                         placeholder="Search name or paster adress">
                                 </div>
                                 <ul class="dropdown-menu dropdown-menu-dark swap-from-ul"
                                     aria-labelledby="dropdownMenuButton1">
                                     <li><a class="dropdown-item active" href="#"><img src="images/eth.svg" width="20px"
-                                                height="20px">
-                                            ETH</a></li>
+                                                height="20px">ETH</a></li>
                                     <li><a class="dropdown-item" href="#"><img src="images/bonk.svg" width="20px"
                                                 height="20px">BONK</a></li>
                                     <li><a class="dropdown-item" href="#"><img src="images/cro.svg" width="20px"
@@ -215,20 +214,25 @@
                                                 height="20px">UNI</a></li>
                                     <li><a class="dropdown-item" href="#"><img src="images/shib.svg" width="20px"
                                                 height="20px">SHIB</a></li>
-                                    <li><a class="dropdown-item" href="#"><img src="images/pol.svg" width="40px"
-                                                height="40px">POL</a></li>
+                                    <li><a class="dropdown-item" href="#"><img src="images/pol.svg" width="20px"
+                                                height="20px">POL</a></li>
                                     <li><a class="dropdown-item" href="#"><img src="images/wbtc.svg" width="20px"
                                                 height="20px">WBTC</a></li>
 
 
                                 </ul>
                             </div>
-                            <input  class= "col-md-6" type="text" placeholder="0" style="color:rgb(255, 255, 255);background-color: rgb(18, 19, 20);border: 1px solid rgb(39, 39, 39);border-radius: 0 8px 8px 0 ; ">
+                            <div class="justify-content-center" style="display: inline-block;position: relative;">
+                                <input class=" swapfrom-number" pattern="\d*" type="text" placeholder="0"
+                                    style=" color:rgb(255, 255, 255);background-color: rgb(18, 19, 20);border: 1px solid rgb(39, 39, 39);border-radius: 0 8px 8px 0 ; padding-right: 40px;">
+                                <span class="result" id="usdResult" style="position: absolute;">≈$0.00</span>
+                            </div>
+
                         </div>
-                            
-                        
+
+
                         <!-- 按钮2 互换token-->
-                        <a role="button" href="#" class="swap-button d-flex w-100 justify-content-end"  id="swapButton">
+                        <a role="button" href="#" class="swap-button d-flex w-100 justify-content-end" id="swapButton">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
                                 class="bi bi-arrow-down-up" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
@@ -309,7 +313,9 @@
 
                         </div>
                         <!-- button5 getquotees -->
-                        <button type="button " class="button-getquotes w-100" style="border-radius: 8px; height: 40px; background-color: rgb(105, 105, 105);">Get Quotes</button>
+                        <button type="button " class="button-getquotes w-100"
+                            style="border-radius: 8px; height: 40px; background-color: rgb(105, 105, 105);">Get
+                            Quotes</button>
                         <a href="/service">Terms of service</a>
                     </div>
                 </div>

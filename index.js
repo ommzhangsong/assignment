@@ -1,40 +1,117 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // about button1 the token swap from
+    let swapfromnumber = document.querySelector(".swapfrom-number");
+    let result = document.querySelector(".result")
 
-    
-    let swaptoli = document.querySelectorAll(".swap-to-ul li");
-    let swaptobtn = document.getElementById("dropdownMenuButton3");
-    swaptoli.forEach(item => {
+    let swapfromli = document.querySelectorAll(".swap-from-ul li");
+    let swapfrombtn = document.getElementById("dropdownMenuButton1");
+    swapfromli.forEach(item => {
         item.addEventListener("click", function (e) {
-                 e.preventDefault();
-        let imgsrc = this.querySelector("img").src;
-        let txt = this.textContent;
-        swaptobtn.innerHTML = `<img src="${imgsrc}"> ${txt}`;
+            e.preventDefault();
+            let imgsrc = this.querySelector("img").src;
+            let txt = this.textContent;
+            swapfrombtn.innerHTML = `<img src="${imgsrc}"> ${txt}`;
         });
-    });
-    let searchwapper3= document.getElementById("searchWrapper3");
-    searchinput=document.querySelector(".search-bar-3");
-    let swaptoul=document.querySelector(".swap-to-ul");
+    }
+    );
+    let searchWapper1 = document.getElementById("searchWrapper1");
+    searchinput1 = document.querySelector(".search-bar-1");
 
     // seach bar cover dropdown menu
-    document.querySelector(".dropdown3").addEventListener("show.bs.dropdown",function(){
+    document.querySelector(".dropdown1").addEventListener("show.bs.dropdown", function () {
+        swapfrombtn.classList.add("d-none");
+        swapfromnumber.classList.add("d-none");
+        searchWapper1.classList.remove("d-none");
+        searchinput1.focus();
+    });
+    document.querySelector(".dropdown1").addEventListener("hide.bs.dropdown", function () {
+        swapfrombtn.classList.remove("d-none");
+        swapfromnumber.classList.remove("d-none");
+        searchWapper1.classList.add("d-none");
+        searchinput1.value = "";
+        swapfromli.forEach(item => item.classList.remove("d-none"));
+    });
+    searchinput1.addEventListener("input", function (e) {
+        let searchval = e.target.value.trim().toUpperCase();
+        swapfromli.forEach(item => {
+            let txt = item.textContent.trim().toUpperCase();
+            if (txt.includes(searchval)) {
+                item.classList.remove("d-none");
+            }
+            else {
+                item.classList.add("d-none");
+            }
+        });
+
+    });
+
+    // about button3 the token swap to
+
+    let swaptoli = document.querySelectorAll(".swap-to-ul li");
+    // all elements 
+    let swaptobtn = document.getElementById("dropdownMenuButton3");
+    // button element
+    // when we click the li element , change the button content
+    swaptoli.forEach(item => {
+        item.addEventListener("click", function (e) {
+            e.preventDefault();
+            let imgsrc = this.querySelector("img").src;
+            let txt = this.textContent;
+            swaptobtn.innerHTML = `<img src="${imgsrc}"> ${txt}`;
+        });
+    });
+    // container of search bar
+    let searchwapper3 = document.getElementById("searchWrapper3");
+    // search bar input
+    searchinput = document.querySelector(".search-bar-3");
+
+    // seach bar cover dropdown menu
+    document.querySelector(".dropdown3").addEventListener("show.bs.dropdown", function () {
         swaptobtn.classList.add("d-none");
         searchwapper3.classList.remove("d-none");
         searchinput.focus();
-    } );
-    document.querySelector(".dropdown3").addEventListener("hide.bs.dropdown",function(){
+    });
+    document.querySelector(".dropdown3").addEventListener("hide.bs.dropdown", function () {
         swaptobtn.classList.remove("d-none");
         searchwapper3.classList.add("d-none");
-        searchinput.value="";
-        swaptpli.forEach(item=>item.classList.remove("d-none"));
-    } );
-    searchinput.addEventListener("input",function(e){ let searchval=e.target.value.trim().toUpperCase();
-        swaptoli.forEach(item=>{
-            let txt=item.textContent.trim().toUpperCase();
-            if(txt.includes(searchval)){
+        searchinput.value = "";
+        swaptoli.forEach(item => item.classList.remove("d-none"));
+    });
+    searchinput.addEventListener("input", function (e) {
+        let searchval = e.target.value.trim().toUpperCase();
+        swaptoli.forEach(item => {
+            let txt = item.textContent.trim().toUpperCase();
+            if (txt.includes(searchval)) {
                 item.classList.remove("d-none");
-            }else{
+            } else {
                 item.classList.add("d-none");
-            }});
-        
+            }
+        });
+
+    });
+    // swap token
+    let swaptoken = document.querySelector(".swap-button")
+    swaptoken.addEventListener("click", function () {
+        let imgsrc1 = swapfrombtn.querySelector("img").src;
+        let txt1 = swapfrombtn.textContent;
+        let imgsrc2 = swaptobtn.querySelector("img").src
+        let txt2 = swaptobtn.textContent;
+        swaptobtn.innerHTML = `<img src="${imgsrc1}"> ${txt1}`;
+        swapfrombtn.innerHTML = `<img src="${imgsrc2}"> ${txt2}`;
+    })
+    // inputnumber 
+    document.querySelector(".swapfrom-number").addEventListener("input", function (e) {
+        if (!/\d/.test(e.key)) {
+            this.value = this.value.replace(/\D/g, ""); // 阻止非数字键输入
+        }
+        // swap number
+        // swap into USD
+        swapfromnumber.addEventListener("input", function () {
+
+            if (swapfrombtn.textContent.trim() == "ETH") {
+                converted = Number(swapfromnumber.value.trim()*4393.24);
+                result.textContent = `≈${converted}`;
+            }
+        })
     });
 });
