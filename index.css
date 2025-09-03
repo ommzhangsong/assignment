@@ -4,7 +4,7 @@ body {
 
 }
 
-/* 内容栏 */
+/* content */
 .col-content {
     width: 85%;
     border-radius: 0 8px 8px 0;
@@ -13,7 +13,7 @@ body {
     flex-direction: column;
 }
 
-/* 导航栏 */
+
 .col-bar {
     width: 15%;
     border-radius: 8px 0 0 8px;
@@ -21,7 +21,7 @@ body {
 
 
 
-/* 所有a标签 */
+/* all a*/
 .nav-link {
     color: rgb(156, 161, 175) !important;
     display: flex;
@@ -31,7 +31,7 @@ body {
     margin-left: 10px;
 }
 
-/* a的父节点li标签 */
+
 .nav-item {
     margin: 10px 0px !important;
     height: 40px;
@@ -47,7 +47,7 @@ body {
 
 }
 
-/* 当前活跃a标签 */
+
 li .active {
     background-color: transparent !important;
     color: rgb(139, 153, 255) !important;
@@ -57,7 +57,7 @@ li .active {
 
 }
 
-/* 标签的svg箭头图标 */
+
 .nav-arrow {
     display: none;
     vertical-align: middle;
@@ -67,7 +67,7 @@ li .active {
     width: 20px !important;
 }
 
-/* 活跃标签的svg箭头图标 */
+/* active svg arrow*/
 .active .nav-arrow {
     display: inline;
     margin-left: auto;
@@ -76,18 +76,18 @@ li .active {
 
 
 
-/* 活跃svg图标 */
+/* active svg */
 .active svg {
     width: 40px !important;
     fill: rgb(139, 153, 255) !important;
 }
 
-/* 所有svg图标 */
+/* all svg */
 .col-bar .nav-link svg {
     width: 18px;
     height: auto;
     fill: rgb(156, 161, 175);
-    /* 统一设置SVG颜色 */
+    
 
 }
 
@@ -151,7 +151,7 @@ li .active {
     color: rgb(248, 248, 248);
 }
 
-/* 内容栏的SWAP */
+/* SWAP */
 .container-card {
     display: flex;
     background-color: rgb(18, 19, 20);
@@ -164,13 +164,13 @@ li .active {
     justify-content: space-between;
 }
 
-/* select框的容器 */
+/* select */
 .select-network {
     width: 100% !important;
 
 }
 
-/* select标签 */
+
 .custom-select-network {
     color: aliceblue;
     border-radius: 50px;

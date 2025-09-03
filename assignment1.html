@@ -11,16 +11,17 @@
 </head>
 
 <body>
+    <!-- There are two main parts,left bar and content. The content have two parts:header bar and swap card -->
     <div class="container-fluid h-100" style="padding: 0%;">
         <div class="row-custom h-100" style="border: solid;display: flex;margin: 0;padding: 0%;">
-            <!-- 左边的导航栏 -->
+            <!-- left part -->
             <div class="col-bar h-100 d-flex flex-column"
                 style="background-color: rgb(18, 19, 20);border-right:1px solid rgb(30, 30, 30) ;">
-                <!-- RYANimage -->
+                <!-- SWAPimage -->
                 <div style="margin-top: 15px;margin-left: 10px;">
                     <img src="images/SWAP.png" alt="loge" style="width: 90%; ">
                 </div>
-                <!-- 垂直导航栏 -->
+                <!-- nave bar -->
                 <ul class="nav nav-pills flex-column">
                     <li class="nav-item">
                         <a class="nav-link" href="/Dashboard" style="align-items: center;">
@@ -100,7 +101,7 @@
                             </svg></a>
                     </li>
                 </ul>
-                <!-- 底部的Terms of users -->
+                <!-- Terms of users -->
                 <div class="bottom-nav" style="margin:200px auto 0 auto ;">
                     <ul class="nav">
                         <li>
@@ -119,9 +120,9 @@
                     </ul>
                 </div>
             </div>
-            <!-- 右边内容栏 -->
+            <!-- right content bar -->
             <div class="col-content h-100 d-flex " style="background-color:rgb(0, 0, 0);">
-                <!-- 内容栏上面组件 -->
+                <!-- upper content 内容栏上面组件 -->
                 <div class="header d-flex  row mb-3" style="height: 100px;padding: 30px;width: 100%;">
 
                     <div class="col-md-6">
@@ -160,11 +161,11 @@
                             sign up</button>
                     </div>
                 </div>
-                <!-- 内容栏上面组件结束 -->
-                <!-- 主要内容框：进行SWAP -->
+            
+                <!-- SWAP  card-->
                 <div class="below-header">
                     <div class="card container-card">
-                        <!-- 选择网络 -->
+                        <!-- network choose -->
                         <div class="select-network">
                             <label for="account"></label>
                             <select class="custom-select-network" id="account">
@@ -179,7 +180,7 @@
                         <div class="d-flex justify-content-start mb-3" style="width: 100%;">
                             <span style="color: aliceblue;font-size: 17px;font-weight: bold;">Swap from</span>
                         </div>
-                        <!--按钮1  选择token输入数量-->
+                        <!--btn 1 choose token and give number of it按钮1  选择token输入数量-->
                         <div class="mb-3 select-from-token d-flex  " style="padding: 0%;">
                             <div class="dropdown dropdown1 " style="padding:0%">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
@@ -231,7 +232,7 @@
                         </div>
 
 
-                        <!-- 按钮2 互换token-->
+                        <!-- btn2 swap token按钮2 互换token-->
                         <a role="button" href="#" class="swap-button d-flex w-100 justify-content-end" id="swapButton">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
                                 class="bi bi-arrow-down-up" viewBox="0 0 16 16">
@@ -243,7 +244,7 @@
                         <div class="d-flex justify-content-start mb-3" style="width: 100%;">
                             <span style="color: aliceblue;font-size: 17px;font-weight: bold;">Swap to</span>
                         </div>
-                        <!-- 按钮3 选择token -->
+                        <!--btn 3 swap to what token 按钮3 选择token -->
                         <div class="mb-3 select-to-token">
                             <div class="dropdown dropdown3" style="position: relative;">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton3"
@@ -288,7 +289,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <!-- 按钮4 下拉按钮选择 -->
+                        <!-- btn4 advanced opinions -->
                         <div class="button-advancedopinons">
 
                             <button type="button" data-bs-toggle="collapse" data-bs-target="#advancedOptions"
