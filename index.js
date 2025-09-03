@@ -106,11 +106,62 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         // swap number
         // swap into USD
-        swapfromnumber.addEventListener("input", function () {
 
-            if (swapfrombtn.textContent.trim() == "ETH") {
-                converted = Number(swapfromnumber.value.trim()*4393.24);
-                result.textContent = `≈${converted}`;
+
+        const rates = {
+            ETH: 4393.24,
+            BONK: 0,
+            CRO: 0.27,
+            ENA: 0.68,
+            USDE: 1.00,
+            USDT: 1.00,
+            UNI: 9.59,
+            SHIB: 0.00,
+            POL: 0.29,
+            WBTC: 111276.00
+        };
+
+        function updateResult() {
+            const coin = swapfrombtn.textContent.trim().toUpperCase();
+            const rate = rates[coin];
+            const value = Number(swapfromnumber.value.trim());
+
+            if (!isNaN(value) && rate !== undefined) {
+                result.textContent = `≈$${(value * rate).toFixed(2)}`;
+            } else {
+                result.textContent = "未知币种";
+            }
+        }
+
+        swapfromnumber.addEventListener("input", updateResult);
+
+        // 监听按钮文本变化
+        const observer = new MutationObserver(updateResult);
+        observer.observe(swapfrombtn, {
+            childList: true,
+            characterData: true,
+            subtree: true
+        });
+
+        updateResult();
+
+
+
+
+        // get quotes
+        let buttongetquotes = document.querySelector(".button-getquotes")
+        swapfromnumber.addEventListener("input", function () {
+            const hasValidValue = this.value.trim() !== '' && Number(this.value) !== 0;
+
+            // 根据判断结果修改按钮状态
+            if (hasValidValue) {
+                buttongetquotes.disabled = false; // 启用按钮（可点击）
+                buttongetquotes.style.backgroundColor = '#2196F3'; // 显眼颜色（示例：蓝色）
+                buttongetquotes.style.color = 'white'; // 文字变白，增强对比
+            } else {
+                buttongetquotes.disabled = true; // 禁用按钮（不可点击）
+                buttongetquotes.style.backgroundColor = '#cccccc'; // 灰色（禁用状态）
+                buttongetquotes.style.color = '#666666'; // 文字变灰
             }
         })
     });
